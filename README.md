@@ -32,7 +32,7 @@ https://www.biendata.xyz/competition/ccks_2020_4_1/leaderboard/199952/
 
 *注：抽取的实体只能有一个类别标签，数据预处理时shuffle类别（数据类别多折，结果融合）*
 
-模型：[BERT]+[MIDDLE]+CRF
+模型：[BERT]+[Encoder]+CRF
 
 | BERT/MIDDLE | Bi-LSTM | IDCNN | TENER | R-Transformer |
 | :---------: | :-----: | :---: | :---: | :-----------: |
