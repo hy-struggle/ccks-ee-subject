@@ -182,8 +182,8 @@ class BertJointExtractPointer(BertPreTrainedModel):
             for idx in cls_re:
                 # 选出类别表征向量
                 tag_vec = tag_vecs[0][idx].expand((1, seq_len, hid_size))  # (1, seq_len, hidden_size)
-                sequence_output += tag_vec  # (1, seq_len, hidden_size)
-                one_sample_batch.append(sequence_output)
+                fusion_vec = sequence_output + tag_vec  # (1, seq_len, hidden_size)
+                one_sample_batch.append(fusion_vec)
             one_sample_output = torch.cat(one_sample_batch, dim=0)  # (one_sample_bs, seq_len, hidden_size)
 
             # get logits
